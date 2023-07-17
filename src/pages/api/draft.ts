@@ -3,9 +3,9 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import { COOKIE_NAME_PRERENDER_BYPASS } from "next/dist/server/api-utils";
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  const { secret, slug } = req.query;
+  const { secret, slug, contentTypeId } = req.query;
 
-  if (secret !== process.env.APP_CONTENTFUL_SECRET_TOKEN || !slug) {
+  if (secret !== process.env.APP_CONTENTFUL_SECRET_TOKEN || !contentTypeId) {
     return res.status(401).json({ message: "Invalid token" });
   }
 
@@ -23,9 +23,18 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       })
     );
   }
-
-  const url = `/blog/${slug}`;
-
+  const url = getUrlByContentTypeId(contentTypeId as string, slug as string);
   res.setHeader("Location", url);
   return res.status(307).end();
 }
+
+const getUrlByContentTypeId = (contentTypeId: string, slug: string) => {
+  switch (contentTypeId) {
+    case "blogPost":
+      return `/blog/${slug}`;
+    case "blog":
+      return "/blog";
+    default:
+      return "/";
+  }
+};
