@@ -56,7 +56,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   return {
     props: {
       model: entry,
-      draftMode: draftMode,
+      draftMode,
     },
   };
 };
