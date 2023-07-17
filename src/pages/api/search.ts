@@ -7,7 +7,6 @@ export default async function handler(
   res: NextApiResponse
 ) {
   const { q: query } = req.query;
-
   if (!query) {
     return new Response(
       JSON.stringify({ query: "", results: [] } satisfies SearchModel)
