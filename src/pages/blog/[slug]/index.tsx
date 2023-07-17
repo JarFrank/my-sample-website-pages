@@ -33,14 +33,14 @@ const BlogPage: NextPage<BlogPageProps> = ({ model }) => {
         height={200}
         className="mx-auto"
         priority={true}
-        inspectorTags={inspectorProps({ fieldId: "title" })}
+        inspectortags={inspectorProps({ fieldId: "image" })}
       />
       <Title
         tags={inspectorProps({ fieldId: "title" })}
         title={updatedPost?.fields.title || ""}
       />
       <CustomRichText
-        inspectorTags={inspectorProps({ fieldId: "description" })}
+        inspectortags={inspectorProps({ fieldId: "description" })}
         content={updatedPost?.fields.postBody}
       />
     </div>

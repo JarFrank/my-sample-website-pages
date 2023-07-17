@@ -76,14 +76,14 @@ type Props = {
   content: RichTextDocument;
   className?: string;
   classParagraph?: string;
-  inspectorTags?: CustomInspectorModeTags;
+  inspectortags?: CustomInspectorModeTags;
 };
 
 export default function CustomRichText(props: Props) {
   const { content, className, classParagraph } = props;
 
   return (
-    <div {...props.inspectorTags} className={className}>
+    <div {...props.inspectortags} className={className}>
       {documentToReactComponents(
         {
           content: content.content,

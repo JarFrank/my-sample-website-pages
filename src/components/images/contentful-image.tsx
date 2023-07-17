@@ -15,7 +15,7 @@ const contentfulSvgLoader: ImageLoader = (props: ImageLoaderProps) => {
 };
 
 export type ContentfulImageProps = {
-  inspectorTags?: CustomInspectorModeTags;
+  inspectortags?: CustomInspectorModeTags;
 } & ImageProps;
 
 const ContentfulImage = (props: ContentfulImageProps) => {
@@ -31,7 +31,7 @@ const ContentfulImage = (props: ContentfulImageProps) => {
     <Image
       loader={contentfulLoader}
       {...props}
-      {...props.inspectorTags}
+      {...props.inspectortags}
       src={src}
       alt={alt}
       className={className}
