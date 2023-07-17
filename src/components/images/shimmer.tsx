@@ -1,5 +1,4 @@
-import { ImageProps } from "next/image";
-import ContentfulImage from "./contentful-image";
+import ContentfulImage, { ContentfulImageProps } from "./contentful-image";
 
 const shimmer = (w: number, h: number) => `
 <svg width="${w}" height="${h}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -23,7 +22,7 @@ const toBase64 = (str: string) =>
 /**
  * Should have width and height set
  */
-const Shimmer = (props: ImageProps) => (
+const Shimmer = (props: ContentfulImageProps) => (
   <ContentfulImage
     {...props}
     placeholder="blur"

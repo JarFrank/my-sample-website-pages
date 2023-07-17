@@ -1,6 +1,7 @@
 "use client";
 import type { ImageLoader, ImageLoaderProps, ImageProps } from "next/image";
 import Image from "next/image";
+import { CustomInspectorModeTags } from "../../../types";
 
 const contentfulLoader: ImageLoader = (props: ImageLoaderProps) => {
   const extension = "webp";
@@ -13,7 +14,11 @@ const contentfulSvgLoader: ImageLoader = (props: ImageLoaderProps) => {
   return `${props.src}?w=${props.width}&q=${props.quality || 75}`;
 };
 
-const ContentfulImage = (props: ImageProps) => {
+export type ContentfulImageProps = {
+  inspectorTags?: CustomInspectorModeTags;
+} & ImageProps;
+
+const ContentfulImage = (props: ContentfulImageProps) => {
   const alt = props.alt ? props.alt : "";
   const src = (props.src as string)?.startsWith("//")
     ? `https:${props.src}`
@@ -26,6 +31,7 @@ const ContentfulImage = (props: ImageProps) => {
     <Image
       loader={contentfulLoader}
       {...props}
+      {...props.inspectorTags}
       src={src}
       alt={alt}
       className={className}
