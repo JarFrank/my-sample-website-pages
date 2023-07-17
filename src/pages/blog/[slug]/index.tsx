@@ -11,11 +11,11 @@ import {
   useContentfulLiveUpdates,
 } from "@contentful/live-preview/react";
 
-type BlogPageProps = {
+type BlogPostPageProps = {
   model: ContentfulUnresolvableEntry<TypeBlogPostSkeleton>;
 };
 
-const BlogPage: NextPage<BlogPageProps> = ({ model }) => {
+const BlogPostPage: NextPage<BlogPostPageProps> = ({ model }) => {
   if (!model) {
     throw new Error("Model is undefined");
   }
@@ -47,15 +47,16 @@ const BlogPage: NextPage<BlogPageProps> = ({ model }) => {
   );
 };
 
-export default BlogPage;
+export default BlogPostPage;
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const { slug } = context.params as IParams;
-  const isEnabled = context.draftMode ?? false;
-  const entry = await getBlogPost(slug, isEnabled);
+  const draftMode = context.draftMode ?? false;
+  const entry = await getBlogPost(slug, draftMode);
   return {
     props: {
       model: entry,
+      draftMode: draftMode,
     },
   };
 };

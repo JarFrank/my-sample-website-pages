@@ -2,15 +2,15 @@ import React from "react";
 import Link from "next/link";
 
 type NavbarProps = {
-  preview?: boolean;
+  draftMode: boolean;
 };
 
-const Navbar = ({ preview }: NavbarProps) => {
-  const previewStyles = preview ? "border-red-500 border-b-4" : "";
+const Navbar = ({ draftMode }: NavbarProps) => {
+  const draftStyles = draftMode ? "border-red-500 border-b-4" : "";
 
   return (
     <nav
-      className={`flex items-center justify-between p-6 gap-5 ${previewStyles}`}
+      className={`flex items-center justify-between p-6 gap-5 ${draftStyles}`}
     >
       <div className="text-white text-2xl">
         <Link href="/">My App</Link>
