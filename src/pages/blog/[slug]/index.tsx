@@ -40,7 +40,7 @@ const BlogPage: NextPage<BlogPageProps> = ({ model }) => {
         title={updatedPost?.fields.title || ""}
       />
       <CustomRichText
-        inspectortags={inspectorProps({ fieldId: "description" })}
+        inspectortags={inspectorProps({ fieldId: "postBody" })}
         content={updatedPost?.fields.postBody}
       />
     </div>
