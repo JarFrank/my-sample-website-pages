@@ -28,24 +28,4 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 
   res.setHeader("Location", url);
   return res.status(307).end();
-
-  // const url = `/blog/${slug}`;
-  // res.setHeader("Content-Type", "text/html");
-  // res.write(
-  //   `<!DOCTYPE html><html><head><meta http-equiv="Refresh" content="0; url=${url}" />
-  //   <script>window.location.href = '${url}'</script>
-  //   </head>
-  //   </html>`
-  // );
-  // res.end();
-
-  // console.log(req.query);
-  // console.log("status");
-  // // res.status(200).json({ name: "John Doe" });
-  // res.setPreviewData({});
-  // // const { slug } = req.query;
-  // const url = `/blog/${slug}`;
-  // console.log(url);
-  // res.redirect(url);
-  // res.end();
 }

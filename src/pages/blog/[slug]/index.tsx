@@ -6,28 +6,43 @@ import { TypeBlogPostSkeleton } from "../../../../types/contentful";
 import { Title } from "@/components/title";
 import CustomRichText from "@/components/custom-rich-text";
 import Shimmer from "@/components/images/shimmer";
+import {
+  useContentfulInspectorMode,
+  useContentfulLiveUpdates,
+} from "@contentful/live-preview/react";
 
 type BlogPageProps = {
   model: ContentfulUnresolvableEntry<TypeBlogPostSkeleton>;
 };
 
-const BlogPage: NextPage<BlogPageProps> = (props) => {
-  if (!props || !props.model) {
+const BlogPage: NextPage<BlogPageProps> = ({ model }) => {
+  if (!model) {
     throw new Error("Model is undefined");
   }
-  const { title, postBody, image } = props.model.fields;
+  const updatedPost = useContentfulLiveUpdates(model);
+  const inspectorProps = useContentfulInspectorMode({
+    entryId: model.sys.id,
+  });
+
   return (
     <div>
       <Shimmer
-        src={image?.fields.file?.url ?? ""}
-        alt={image?.fields.title ?? ""}
+        src={updatedPost?.fields.image?.fields.file?.url ?? ""}
+        alt={updatedPost?.fields.image?.fields.title ?? ""}
         width={500}
         height={200}
         className="mx-auto"
         priority={true}
+        inspectorTags={inspectorProps({ fieldId: "title" })}
       />
-      <Title title={title} />
-      <CustomRichText content={postBody} />
+      <Title
+        tags={inspectorProps({ fieldId: "title" })}
+        title={updatedPost?.fields.title || ""}
+      />
+      <CustomRichText
+        inspectorTags={inspectorProps({ fieldId: "description" })}
+        content={updatedPost?.fields.postBody}
+      />
     </div>
   );
 };
@@ -36,8 +51,7 @@ export default BlogPage;
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const { slug } = context.params as IParams;
-  const isEnabled = context.preview ?? false;
-  console.log({ isEnabled });
+  const isEnabled = context.draftMode ?? false;
   const entry = await getBlogPost(slug, isEnabled);
   return {
     props: {

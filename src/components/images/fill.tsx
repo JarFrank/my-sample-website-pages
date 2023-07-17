@@ -1,11 +1,10 @@
-import { ImageProps } from "next/image";
-import ContentfulImage from "./contentful-image";
+import ContentfulImage, { ContentfulImageProps } from "./contentful-image";
 
 /**
  * Parrent component for all images that should fill the container.
  * className should be set to relative
  */
-const Fill = (props: ImageProps) => (
+const Fill = (props: ContentfulImageProps) => (
   <ContentfulImage
     {...props}
     fill

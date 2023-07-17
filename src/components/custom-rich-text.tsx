@@ -4,6 +4,7 @@ import React from "react";
 import ContentfulImage from "./images/contentful-image";
 import { Document as RichTextDocument } from "@contentful/rich-text-types";
 import Blockquote from "./blockquote";
+import { CustomInspectorModeTags } from "../../types";
 
 const paragraphClass = () => {
   const className = "rte-paragraph pb-3 text-base";
@@ -71,17 +72,18 @@ const customMarkdownOptions = (className: string | undefined) => ({
   },
 });
 
-export default function CustomRichText({
-  content,
-  className,
-  classParagraph,
-}: {
+type Props = {
   content: RichTextDocument;
   className?: string;
   classParagraph?: string;
-}) {
+  inspectorTags?: CustomInspectorModeTags;
+};
+
+export default function CustomRichText(props: Props) {
+  const { content, className, classParagraph } = props;
+
   return (
-    <div className={className}>
+    <div {...props.inspectorTags} className={className}>
       {documentToReactComponents(
         {
           content: content.content,
