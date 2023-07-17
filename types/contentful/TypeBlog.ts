@@ -3,6 +3,7 @@ import type { TypeBlogPostSkeleton } from "./TypeBlogPost";
 
 export interface TypeBlogFields {
     title: EntryFieldTypes.Symbol;
+    slug: EntryFieldTypes.Symbol;
     description: EntryFieldTypes.RichText;
     posts: EntryFieldTypes.Array<EntryFieldTypes.EntryLink<TypeBlogPostSkeleton>>;
 }
