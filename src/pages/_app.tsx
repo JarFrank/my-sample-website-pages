@@ -5,14 +5,15 @@ import "@contentful/live-preview/style.css";
 import Layout from "@/components/layout";
 
 export default function App({ Component, pageProps }: AppProps) {
+  const draftMode = pageProps.draftMode ?? false;
   return (
     <ContentfulLivePreviewProvider
       locale="en-US"
-      enableInspectorMode={true}
-      enableLiveUpdates={true}
-      debugMode={true}
+      enableInspectorMode={draftMode}
+      enableLiveUpdates={draftMode}
+      debugMode={draftMode}
     >
-      <Layout draftMode={pageProps.draftMode ?? false}>
+      <Layout draftMode={draftMode}>
         <Component {...pageProps} />
       </Layout>
     </ContentfulLivePreviewProvider>
