@@ -13,7 +13,7 @@
     "search:export": "ts-node src/services/search/export-data-to-search.ts"
   },
   "dependencies": {
-    "@azure/search-documents": "^11.2.0-beta.2",
+    "@azure/search-documents": "^11.3.0-beta.3",
     "@contentful/rich-text-react-renderer": "^15.17.0",
     "contentful": "^10.3.5",
     "next": "13.4.10",
