@@ -1,12 +1,18 @@
 import Link from "next/link";
-import { ContentfulUnresolvableEntry } from "../../types";
+import {
+  ContentfulUnresolvableEntry,
+  CustomInspectorModeTags,
+} from "../../types";
 import { TypeBlogPostSkeleton } from "../../types/contentful/TypeBlogPost";
 
-const FeaturedPosts = (
-  posts: ContentfulUnresolvableEntry<TypeBlogPostSkeleton>[]
-) => {
+type FeaturedPostsProps = {
+  posts: ContentfulUnresolvableEntry<TypeBlogPostSkeleton>[];
+  inspectortags?: CustomInspectorModeTags;
+};
+
+const FeaturedPosts = ({ posts, inspectortags }: FeaturedPostsProps) => {
   return (
-    <div className="grid grid-cols-1 gap-6 pt-10">
+    <div {...inspectortags} className="grid grid-cols-1 gap-6 pt-10">
       {posts.map((post) => (
         <Link
           className="hover:text-blue-500 transition-colors duration-200 border border-gray-300 shadow-md p-5"
