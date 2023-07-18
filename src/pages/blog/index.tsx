@@ -27,7 +27,7 @@ const BlogPage: NextPage<BlogPageProps> = ({ model }) => {
   const { title, description, posts } = updatedPost?.fields;
   return (
     <div>
-      <Title tags={inspectorProps({ fieldId: "title" })} title={title || ""} />
+      <Title tags={inspectorProps({ fieldId: "title" })} title={title} />
       <CustomRichText
         inspectortags={inspectorProps({ fieldId: "description" })}
         content={description}

@@ -23,25 +23,22 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ model }) => {
   const inspectorProps = useContentfulInspectorMode({
     entryId: model.sys.id,
   });
-
+  const { image, postBody, title } = updatedPost.fields;
   return (
     <div>
       <Shimmer
-        src={updatedPost?.fields.image?.fields.file?.url ?? ""}
-        alt={updatedPost?.fields.image?.fields.title ?? ""}
+        src={image?.fields.file?.url ?? ""}
+        alt={image?.fields.title ?? ""}
         width={500}
         height={200}
         className="mx-auto"
         priority={true}
         inspectortags={inspectorProps({ fieldId: "image" })}
       />
-      <Title
-        tags={inspectorProps({ fieldId: "title" })}
-        title={updatedPost?.fields.title || ""}
-      />
+      <Title tags={inspectorProps({ fieldId: "title" })} title={title} />
       <CustomRichText
         inspectortags={inspectorProps({ fieldId: "postBody" })}
-        content={updatedPost?.fields.postBody}
+        content={postBody}
       />
     </div>
   );
