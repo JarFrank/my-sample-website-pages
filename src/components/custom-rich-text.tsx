@@ -1,4 +1,7 @@
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import {
+  Options,
+  documentToReactComponents,
+} from "@contentful/rich-text-react-renderer";
 import { BLOCKS, MARKS } from "@contentful/rich-text-types";
 import React from "react";
 import ContentfulImage from "./images/contentful-image";
@@ -11,7 +14,7 @@ const paragraphClass = () => {
   return className;
 };
 
-const customMarkdownOptions = (className: string | undefined) => ({
+const customMarkdownOptions = (className: string | undefined): Options => ({
   renderNode: {
     [BLOCKS.EMBEDDED_ASSET]: (node: any) => {
       const file = node.data.target.fields.file;
