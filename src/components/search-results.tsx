@@ -53,7 +53,6 @@ export default function SearchResults() {
               <h3 className="text-lg font-medium py-5">{result.name}</h3>
               <p className="pb-5">
                 <span className="font-bold text-lg">{result.score}</span>
-                {" | "}
                 {result.highlights.length > 0 && (
                   <span
                     className="line-clamp-2"
