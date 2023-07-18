@@ -35,7 +35,7 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ model }) => {
         priority={true}
         inspectortags={inspectorProps({ fieldId: "image" })}
       />
-      <Title tags={inspectorProps({ fieldId: "title" })} title={title} />
+      <Title inspectortags={inspectorProps({ fieldId: "title" })} title={title} />
       <CustomRichText
         inspectortags={inspectorProps({ fieldId: "postBody" })}
         content={postBody}
