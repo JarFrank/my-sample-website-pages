@@ -13,7 +13,7 @@ const Navbar = ({ draftMode }: NavbarProps) => {
       className={`flex items-center justify-between p-6 gap-5 ${draftStyles}`}
     >
       <div className="text-white text-2xl">
-        <Link href="/">My App</Link>
+        <Link href="/">My New Title</Link>
       </div>
       <div>
         <ul className="flex space-x-4">
