@@ -284,7 +284,7 @@
         "id": "blog",
         "type": "ContentType",
         "createdAt": "2023-07-13T09:24:27.141Z",
-        "updatedAt": "2023-07-17T15:27:36.891Z",
+        "updatedAt": "2023-07-18T16:17:42.122Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -292,8 +292,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 3,
-        "publishedAt": "2023-07-17T15:27:36.891Z",
+        "publishedVersion": 5,
+        "publishedAt": "2023-07-18T16:17:42.122Z",
         "firstPublishedAt": "2023-07-13T09:24:27.758Z",
         "createdBy": {
           "sys": {
@@ -309,8 +309,8 @@
             "id": "76n2AHmvcagXabfZqAVp8Y"
           }
         },
-        "publishedCounter": 2,
-        "version": 4,
+        "publishedCounter": 3,
+        "version": 6,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -341,6 +341,9 @@
           "localized": false,
           "required": true,
           "validations": [
+            {
+              "unique": true
+            }
           ],
           "disabled": false,
           "omitted": false
@@ -559,7 +562,7 @@
             "linkType": "Space"
           }
         },
-        "version": 4,
+        "version": 6,
         "createdAt": "2023-07-13T09:24:27.896Z",
         "createdBy": {
           "sys": {
@@ -568,7 +571,7 @@
             "linkType": "User"
           }
         },
-        "updatedAt": "2023-07-17T15:27:37.728Z",
+        "updatedAt": "2023-07-18T16:17:43.099Z",
         "updatedBy": {
           "sys": {
             "id": "76n2AHmvcagXabfZqAVp8Y",
@@ -632,7 +635,7 @@
         "id": "zMM5We1530fgSdl2JGfcC",
         "type": "Entry",
         "createdAt": "2023-07-12T14:06:58.333Z",
-        "updatedAt": "2023-07-13T09:50:53.920Z",
+        "updatedAt": "2023-07-19T10:08:45.431Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -640,8 +643,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 14,
-        "publishedAt": "2023-07-13T09:50:53.920Z",
+        "publishedVersion": 40,
+        "publishedAt": "2023-07-19T09:27:23.055Z",
         "firstPublishedAt": "2023-07-12T14:08:29.313Z",
         "createdBy": {
           "sys": {
@@ -657,8 +660,8 @@
             "id": "76n2AHmvcagXabfZqAVp8Y"
           }
         },
-        "publishedCounter": 4,
-        "version": 15,
+        "publishedCounter": 9,
+        "version": 43,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -683,6 +686,15 @@
         "title": {
           "en-US": "Exploring the Power of Next.js: A Comprehensive Guide"
         },
+        "image": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "6JF5av4r8MbsGGkzaqDq9"
+            }
+          }
+        },
         "postBody": {
           "en-US": {
             "data": {
@@ -697,7 +709,7 @@
                     },
                     "marks": [
                     ],
-                    "value": "Introduction:",
+                    "value": "Introduction: hello from preview! ;)",
                     "nodeType": "text"
                   }
                 ],
@@ -1003,15 +1015,6 @@
             ],
             "nodeType": "document"
           }
-        },
-        "image": {
-          "en-US": {
-            "sys": {
-              "type": "Link",
-              "linkType": "Asset",
-              "id": "YUZwJaIA1QSLN1RsDMopt"
-            }
-          }
         }
       }
     },
@@ -1031,7 +1034,7 @@
         "id": "5ZD4bpODgjeiN0iQvAz4zR",
         "type": "Entry",
         "createdAt": "2023-07-12T14:08:35.194Z",
-        "updatedAt": "2023-07-17T15:47:16.134Z",
+        "updatedAt": "2023-07-18T09:34:16.837Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -1039,8 +1042,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 32,
-        "publishedAt": "2023-07-17T15:47:16.134Z",
+        "publishedVersion": 36,
+        "publishedAt": "2023-07-18T09:34:16.837Z",
         "firstPublishedAt": "2023-07-12T14:09:31.623Z",
         "createdBy": {
           "sys": {
@@ -1056,8 +1059,8 @@
             "id": "76n2AHmvcagXabfZqAVp8Y"
           }
         },
-        "publishedCounter": 4,
-        "version": 33,
+        "publishedCounter": 5,
+        "version": 37,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -1144,7 +1147,7 @@
                         "content": [
                           {
                             "nodeType": "text",
-                            "value": "What is TypeScript?  ",
+                            "value": "What is TypeScript?",
                             "marks": [
                             ],
                             "data": {
@@ -1859,7 +1862,7 @@
         "id": "5XzdCy5pC44TIlLUPqCQKg",
         "type": "Entry",
         "createdAt": "2023-07-13T09:06:21.061Z",
-        "updatedAt": "2023-07-13T09:07:10.069Z",
+        "updatedAt": "2023-07-17T16:35:31.498Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -1867,8 +1870,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 7,
-        "publishedAt": "2023-07-13T09:07:10.069Z",
+        "publishedVersion": 12,
+        "publishedAt": "2023-07-17T16:35:31.498Z",
         "firstPublishedAt": "2023-07-13T09:07:10.069Z",
         "createdBy": {
           "sys": {
@@ -1884,8 +1887,8 @@
             "id": "76n2AHmvcagXabfZqAVp8Y"
           }
         },
-        "publishedCounter": 1,
-        "version": 8,
+        "publishedCounter": 3,
+        "version": 13,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -2151,14 +2154,14 @@
               "sys": {
                 "type": "Link",
                 "linkType": "Entry",
-                "id": "zMM5We1530fgSdl2JGfcC"
+                "id": "5ZD4bpODgjeiN0iQvAz4zR"
               }
             },
             {
               "sys": {
                 "type": "Link",
                 "linkType": "Entry",
-                "id": "5ZD4bpODgjeiN0iQvAz4zR"
+                "id": "zMM5We1530fgSdl2JGfcC"
               }
             }
           ]
