@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "postbuild": "npm run search:export",
+    "postbuild2": "npm run search:export",
     "contentful:export": "node contentful/contentfulExport.js",
     "contentful:typegen": "cf-content-types-generator contentful/export.json --out types/contentful --v10",
     "search:export": "ts-node src/services/search/export-data-to-search.ts"

@@ -2,12 +2,13 @@ import {
   Options,
   documentToReactComponents,
 } from "@contentful/rich-text-react-renderer";
-import { BLOCKS, MARKS } from "@contentful/rich-text-types";
+import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types";
 import React from "react";
 import ContentfulImage from "./images/contentful-image";
 import { Document as RichTextDocument } from "@contentful/rich-text-types";
 import Blockquote from "./blockquote";
 import { CustomInspectorModeTags } from "../../types";
+import Link from "next/link";
 
 const paragraphClass = () => {
   const className = "rte-paragraph pb-3 text-base";
@@ -66,6 +67,17 @@ const customMarkdownOptions = (className: string | undefined): Options => ({
     },
     [BLOCKS.UL_LIST]: (node: any, children: React.ReactNode) => {
       return <ul className="list-disc pl-5">{children}</ul>;
+    },
+    [INLINES.ENTRY_HYPERLINK]: (node: any, children: React.ReactNode) => {
+      const url = "/blog/" + node.data.target.fields.slug;
+      return (
+        <Link
+          href={url}
+          className="inline-flex text-blue-500 no-underline border-b border-blue-500 hover:text-blue-600 hover:border-blue-600"
+        >
+          {children}
+        </Link>
+      );
     },
   },
   renderMark: {
